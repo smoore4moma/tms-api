@@ -14,15 +14,15 @@ Screenshots...
 
 <strong>UI</strong>
 
-<img src='https://github.com/smoore4moma/TmsApi/blob/master/tms-api/Scripts/clients/webui.jpg' />
+<img src='https://github.com/smoore4moma/tms-api/blob/master/tms-api/Images/tms-api.jpg' />
 
 <strong>Help</strong>
 
-<img src='https://github.com/smoore4moma/TmsApi/blob/master/tms-api/Scripts/clients/help.jpg' />
+<img src='https://github.com/smoore4moma/tms-api/blob/master/tms-api/Images/tms-api-help.jpg' />
 
 <strong>Visualization</strong>
 
-<img src='https://github.com/smoore4moma/TmsApi/blob/master/tms-api/Scripts/clients/artist.jpg' />
+<img src='https://github.com/smoore4moma/tms-api/blob/master/tms-api/Images/tms-api-example.jpg' />
 
 
 <strong>Installation</strong>
