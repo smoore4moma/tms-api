@@ -1,0 +1,116 @@
+{
+    "source": "The Museum of Modern Art (MoMA)",
+    "language": "EN",
+    "resultsCount": 1,
+    "objects": [
+        {
+            "objectNumber": "1600.2001",
+            "objectID": 83696,
+            "title": "Fifth Avenue, Nos. 4, 6, 8, Manhattan",
+            "displayName": "Berenice Abbott",
+            "alphaSort": "Abbott Berenice",
+            "artistID": 41,
+            "displayDate": "American, 1898–1991",
+            "dated": "March 20, 1936",
+            "dateBegin": 1936,
+            "dateEnd": 1936,
+            "medium": "Gelatin silver print",
+            "dimensions": "15 3/16 × 19 1/2\" (38.6 × 49.5 cm)",
+            "department": "Photography",
+            "classification": "Photograph",
+            "onView": 1,
+            "provenance": "Provenance: The artist, New York; to Ed Landin [1]; to Pauline Strasmich, Somerset, Mass., c. 1970 [2]; to Lee Gallery, Winchester, Mass., July 2, 1997 [3]; purchased by Thomas Walther, September 1997 [4]; purchased by The Museum of Modern Art, New York, 2001.\r\n[1] MacGill/Walther 2001(3), p. 1.\r\n[2] Ibid.\r\n[3] Ibid.\r\n[4] Lee Gallery invoice, September 5, 1997; and Lee inventory no. Q1529.\r\n",
+            "description": "",
+            "objectStatusID": 1,
+            "creditLine": "Thomas Walther Collection. Gift of Mr. Robert C. Weinberg, by exchange",
+            "imageID": "81136",
+            "thumbnail": "../Scripts/clients/19971003.jpg",
+            "fullImage": "../Scripts/clients/19971003.jpg",
+            "lastModifiedDate": "2014-12-17T01:03:53",
+            "exhibitions": {
+                "source": null,
+                "language": null,
+                "resultsCount": 4,
+                "exhibitions": [
+                    {
+                        "exhibitionID": 3461,
+                        "projectNumber": "1889A",
+                        "exhibitionTitle": "Berenice Abbott's New York",
+                        "department": "Photography",
+                        "exhibitionDisplayDate": "October 3, 2001 - January/February 2002",
+                        "exhibitionBeginDate": "2001-10-03",
+                        "exhibitionEndDate": "2002-02",
+                        "objectCount": 8
+                    },
+                    {
+                        "exhibitionID": 4631,
+                        "projectNumber": "",
+                        "exhibitionTitle": "Picturing New York: Photographs from The Museum of Modern Art",
+                        "department": "Photography",
+                        "exhibitionDisplayDate": "March 26, 2009 - February 14, 2010",
+                        "exhibitionBeginDate": "2009-03-26",
+                        "exhibitionEndDate": "2010-02-14",
+                        "objectCount": 160
+                    },
+                    {
+                        "exhibitionID": 4754,
+                        "projectNumber": "",
+                        "exhibitionTitle": "Picturing New York: Photographs from The Museum of Modern Art",
+                        "department": "Photography - Confidential",
+                        "exhibitionDisplayDate": "June 9, 2012 - September 2, 2012",
+                        "exhibitionBeginDate": "2012-06-09",
+                        "exhibitionEndDate": "2012-09-02",
+                        "objectCount": 157
+                    },
+                    {
+                        "exhibitionID": 10628,
+                        "projectNumber": "2303",
+                        "exhibitionTitle": "Modern Photographs from the Thomas Walther Collection, 1909-1949",
+                        "department": "Photography - Confidential",
+                        "exhibitionDisplayDate": "December 13, 2014 - April 19, 2015",
+                        "exhibitionBeginDate": "2014-12-13",
+                        "exhibitionEndDate": "2015-04-19",
+                        "objectCount": 290
+                    }
+                ]
+            },
+            "terms": {
+                "source": null,
+                "language": null,
+                "resultsCount": 5,
+                "terms": [
+                    {
+                        "termID": 1120962,
+                        "term": "New York",
+                        "termType": "Place Taken",
+                        "termCount": 0
+                    },
+                    {
+                        "termID": 2035776,
+                        "term": "Mount",
+                        "termType": "Techniques",
+                        "termCount": 0
+                    },
+                    {
+                        "termID": 2035785,
+                        "term": "Retouching (additive)",
+                        "termType": "Techniques",
+                        "termCount": 0
+                    },
+                    {
+                        "termID": 2035860,
+                        "term": "Developing-out paper",
+                        "termType": "Techniques",
+                        "termCount": 0
+                    },
+                    {
+                        "termID": 2035861,
+                        "term": "Enlargement",
+                        "termType": "Techniques",
+                        "termCount": 0
+                    }
+                ]
+            }
+        }
+    ]
+}

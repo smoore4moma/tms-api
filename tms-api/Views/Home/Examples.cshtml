@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Examples";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Examples</h2>
+<hr />
+<p>Below are a few visualizations which use the API.</p>
+
+<p>
+    <div style="padding-left:50px">
+        <li>@Html.ActionLink("Artists & Objects", "artist", "clients", new { area = "" }, null)</li>
+        <li>@Html.ActionLink("Exhibitions & Objects", "exhibition", "clients", new { area = "" }, null)</li>
+        <li>@Html.ActionLink("Objects: Exhibitions and Terms", "object", "clients", new { area = "" }, null)</li>
+    </div>
+</p>
+
+<p>Go to the @Html.ActionLink("API documentation", "Index", "Help", new { area = "HelpPage" }, null) to see examples of XML and JSON output.</p>
+

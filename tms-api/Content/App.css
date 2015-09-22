@@ -1,0 +1,25 @@
+﻿
+/* tooltip */
+
+.tooltip {
+    position: absolute;
+    padding: 10px;
+    border-radius: 8px;
+    background: #D8D8D8;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+
+#tooltipImage {
+    vertical-align: top;
+    text-align: left;
+    padding: 30px 5px 10px 30px;
+}
+
+#tooltipData {
+    vertical-align: top;
+    text-align: left;
+    padding: 30px 30px 10px 5px;
+}
+

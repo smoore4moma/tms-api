@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Object";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>Objects</h2>
+<div id="chart"></div>
+    <svg>
+        <g>
+            <circle term="exhibition" r="5" fill="#C61C6F" cx="25" cy="13" />
+            <text font-family="Helvetica" fill="#536870" x="35" y="20" text-anchor="start" font-size="1.5em">Exhibition</text>
+        </g>
+        <g>
+            <circle term="term" r="5" fill="#FFD700" cx="150" cy="13" />
+            <text font-family="Helvetica" fill="#536870" x="160" y="20" text-anchor="start" font-size="1.5em">Term</text>
+        </g>
+    </svg>
+</div>
+<script src="~/Scripts/d3.min.js"></script>
+<script src="~/Scripts/app/object.js"></script>
+

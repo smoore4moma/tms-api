@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Secure";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Why use OAuth?</h2>
+<hr />
+<p>The <a href="http://en.wikipedia.org/wiki/OAuth">OAuth</a> protocol is a way for you to sign in without needing to store or manage your username and password.</p>
+<p>The only information that we use is your email.  This way we know your email is legitimate, and you know that we cannot compromise your login crendentials.</p>
+<p>OAuth providers like Google, Twitter, and Microsoft have default settings when you use them to log in.  For example, the <a href="https://dev.twitter.com/web/sign-in/desktop-browser" target="_blank">Twitter Sign-In</a> will ask you to accept rights to "Read Tweets from your timeline" and "See who you follow."  The TMS API does not store, use, or really even care about that.  Any web site that has "Sign in with Twitter" will ask for the same permissions.  Same with Google and Microsoft - you may be prompted to share information, but the only thing we care about is a valid email.  And we won't share that with anyone.</p>
+
+

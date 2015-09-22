@@ -1,0 +1,41 @@
+@using System.Web.Http
+@using System.Web.Http.Controllers
+@using System.Web.Http.Description
+@using System.Collections.ObjectModel
+@using tms_api.Areas.HelpPage.Models
+@model Collection<ApiDescription>
+
+@{
+    ViewBag.Title = "TMS API | Help";
+
+    // Group APIs by controller
+    ILookup<HttpControllerDescriptor, ApiDescription> apiGroups = Model.ToLookup(api => api.ActionDescriptor.ControllerDescriptor);
+}
+
+<link type="text/css" href="~/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+<header class="help-page">
+    <div class="content-wrapper">
+        <div class="float-left">
+            <h1>@ViewBag.Title</h1>
+        </div>
+    </div>
+</header>
+<div id="body" class="help-page">
+    <section class="featured">
+        <div class="content-wrapper">
+            <h2>Introduction</h2>
+            <p>
+                <div class="well" style="font-weight:bold">All services require an API authentication token.  Add "?token={your API token}" to the service.  Your API token is on the @Html.ActionLink("Home", "Index", "Home", new { area = "" }, null) page.</div>
+            </p>
+            <p>
+                Below are the different services available to you.  Click on a service to get additional information, including parameters.  All services return JSON by default but you can retrieve XML by adding "type=xml" to the URL.  <a href="http://www.w3.org/TR/cors/" target="_blank">Cross-Origin Resource Sharing (CORS)</a> is enabled for all requests.
+            </p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        @foreach (var group in apiGroups)
+        {
+            @Html.DisplayFor(m => group, "ApiGroup")
+        }
+    </section>
+</div>

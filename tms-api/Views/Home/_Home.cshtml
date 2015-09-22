@@ -1,0 +1,28 @@
+﻿<!-- ko with: home -->
+<div class="jumbotron">
+    <h1>TMS API</h1>
+    <p class="lead">The TMS API is a REST service.  It provides access to art, exhibition, and artist data and images as either JSON or XML.</p>
+    <p>@Html.ActionLink("Terms of Use »", "Terms", "Home", new { area = "" }, new { @class = "btn btn-primary btn-lg" })</p>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Your information</h2>
+        <p>Your API authentication token:</p>
+        <p class="well" data-bind="text: myInfo"></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            The API help section shows the different methods and parameters, as well as examples of how to call services.  Due to rights and reproduction limitations, not every work is available.
+        </p>
+        <p>@Html.ActionLink("Learn more »", "Index", "Help", new { area = "HelpPage" }, new { @class = "btn btn-default" })</p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Open data</h2>
+        <p>Are you interested in building your own museum web services?  Check our GitHub repository with instructions on creating your own REST services with a TMS backend database.</p>
+        <p><a class="btn btn-default" href="https://github.com/smoore4moma/TmsApi">Learn more &raquo;</a></p>
+    </div>
+</div>
+<!-- /ko -->

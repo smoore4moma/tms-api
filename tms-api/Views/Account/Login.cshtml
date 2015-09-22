@@ -1,0 +1,32 @@
+﻿@using tms_api.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "The Museum of Modern Art";
+}
+
+<h2>&nbsp;</h2>
+<div class="row">
+    <div class="col-md-8">
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="jumbotron">
+                    <h1>TMS API</h1>
+                    <p class="lead">The TMS API is a REST service.  It provides access to art, exhibition, and artist data and images as either JSON or XML.</p>
+                    <p>@Html.ActionLink("Terms of Use »", "Terms", "Home", new { area = "" }, new { @class = "btn btn-primary btn-lg" })</p>
+                </div>
+            }
+        </section>
+    </div>
+    <div class="col-md-4">
+        <section id="socialLoginForm">
+            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,38 @@
+﻿@model tms_api.Models.ExternalLoginListViewModel
+@using Microsoft.Owin.Security
+
+<h3>Log in.</h3>
+<hr />
+
+
+@{
+    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+    if (loginProviders.Count() == 0)
+    {
+        <div>
+            <p>
+                There are no external authentication services configured.
+            </p>
+        </div>
+    }
+    else
+    {
+        using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl }))
+        {
+            @Html.AntiForgeryToken()
+            <div id="socialLoginList">
+
+                <p>
+                    <div class="col-md-10">
+                        The first step is to log in with a Google, Twitter, or Microsoft <a href="http://oauth.net" target="_blank">OAuth</a> provider.<br /><br /> @Html.ActionLink("Why use OAuth?", "Secure", "Account", new { area = "" }, null)<br /><br />This will create an API token that you need to access services, as well as give you access to documentation and examples.
+                        <br /><br />
+                    </div>
+                    @foreach (AuthenticationDescription p in loginProviders)
+                    {
+                        <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">@p.AuthenticationType</button>
+                    }
+                </p>
+            </div>
+        }
+    }
+}
