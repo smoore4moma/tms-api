@@ -50,6 +50,7 @@ namespace tms_api.Models
         public DateTime LastModifiedDate { get; set; }
         public GetExhibitionsViewModel Exhibitions { get; set; }
         public GetTermsViewModel Terms { get; set; }
+        public GetComponentsViewModel Components { get; set; }
     }
 
     // This is set up this way to avoid circular references, which causes errors on the help pages

@@ -283,7 +283,7 @@ namespace tms_api.Controllers
         /// Returns a single object.  Requires an ObjectID or ObjectNumber.  If you supply an integer, then the service uses ObjectID otherwise it uses ObjectNumber. 
         /// </summary> 
 
-        [Route("tms-api/objects/{object_id_number:maxlength(42)}")]
+        [Route("api/objects/{object_id_number:maxlength(42)}")]
         public GetObjectsViewModel GetObject(string object_id_number, string token)
         {
 
@@ -319,7 +319,7 @@ namespace tms_api.Controllers
 
                 if (m_isobjectid == false)
                 {
-                    SqlCommand m_cmd_getObjectID = new SqlCommand("procTmsGetObjectID", sql_conn_data);
+                    SqlCommand m_cmd_getObjectID = new SqlCommand("procMomaGetObjectID", sql_conn_data);
                     m_cmd_getObjectID.CommandType = CommandType.StoredProcedure;
                     m_cmd_getObjectID.Parameters.Clear();
                     m_cmd_getObjectID.Parameters.Add(new SqlParameter(@"@p_objectnumber", SqlDbType.NVarChar) { Value = object_id_number });
@@ -336,7 +336,7 @@ namespace tms_api.Controllers
 
                 // Should only use ObjectID at this point
 
-                SqlCommand m_cmd_getObjectData = new SqlCommand("procTmsApiObjects", sql_conn_data);
+                SqlCommand m_cmd_getObjectData = new SqlCommand("procMomaApiObjects", sql_conn_data);
                 m_cmd_getObjectData.CommandType = CommandType.StoredProcedure;
                 m_cmd_getObjectData.Parameters.Clear();
                 m_cmd_getObjectData.Parameters.Add(new SqlParameter(@"@p_objectid", SqlDbType.Int) { Value = m_object_id });
@@ -349,176 +349,10 @@ namespace tms_api.Controllers
 
                 // Objects data
                 DataTable dt_objects = ds.Tables[0];
-                
-                GetObjectsViewModel m_objects_view_model = new GetObjectsViewModel();
-
-                    m_objects_view_model.Source = "Your Museum Name Here";
-                    m_objects_view_model.Language = "EN";
-                    m_objects_view_model.ResultsCount = dt_objects.Rows.Count;
-
-
-                    GetObjectViewModel m_object = new GetObjectViewModel();
-                    List<GetObjectViewModel> m_object_list = new List<GetObjectViewModel>();
-
-                    GetExhibitionViewModel m_exhibition = new GetExhibitionViewModel();
-                    List<GetExhibitionViewModel> m_exhibition_list = new List<GetExhibitionViewModel>();
-
-                    GetTermViewModel m_term = new GetTermViewModel();
-                    List<GetTermViewModel> m_term_list = new List<GetTermViewModel>();
-
-
-                    foreach (DataRow dr_objects in dt_objects.Rows)
-                    {
-
-                        m_object = new GetObjectViewModel();
-
-                        m_object.ObjectNumber = dr_objects["ObjectNumber"].ToString();
-                        m_object.ObjectID = (int)dr_objects["ObjectID"];
-                        m_object.Title = dr_objects["Title"].ToString();
-                        m_object.DisplayName = dr_objects["DisplayName"].ToString();
-                        m_object.AlphaSort = dr_objects["AlphaSort"].ToString();
-                        m_object.ArtistID = (int)dr_objects["ArtistID"];
-                        m_object.DisplayDate = dr_objects["DisplayDate"].ToString();
-                        m_object.Dated = dr_objects["Dated"].ToString();
-                        m_object.DateBegin = (int)dr_objects["DateBegin"];
-                        m_object.DateEnd = (int)dr_objects["DateEnd"];
-                        m_object.Medium = dr_objects["Medium"].ToString();
-                        m_object.Dimensions = dr_objects["Dimensions"].ToString();
-                        m_object.Department = dr_objects["Department"].ToString();
-                        m_object.Classification = dr_objects["Classification"].ToString();
-                        m_object.OnView = (Int16)dr_objects["OnView"];
-                        m_object.Provenance = dr_objects["Provenance"].ToString();
-                        m_object.Description = dr_objects["Description"].ToString();
-                        m_object.ObjectStatusID = (int)dr_objects["ObjectStatusID"];
-                        m_object.CreditLine = dr_objects["CreditLine"].ToString();
-                        m_object.LastModifiedDate = DateTime.Parse(dr_objects["LastModifiedDate"].ToString(), null, DateTimeStyles.AdjustToUniversal);  //Convert.ToDateTime(dr_objects["LastModifiedDate"].ToString(),);
-                        m_object.ImageID = dr_objects["ImageID"].ToString();
-                        m_object.Thumbnail = dr_objects["Thumbnail"].ToString();
-                        m_object.FullImage = dr_objects["FullImage"].ToString();
-
-                        // Exhibitions for objects
-                        DataTable dt_exhibitions = ds.Tables[1];
-
-                        GetExhibitionsViewModel m_exhibitions_view_model = new GetExhibitionsViewModel();
-
-                        m_exhibitions_view_model.ResultsCount = dt_exhibitions.Rows.Count;
-
-                        foreach (DataRow dr_exhibitions in dt_exhibitions.Rows)
-                        {
-                            m_exhibition = new GetExhibitionViewModel();
-
-                            m_exhibition.ExhibitionID = (int)dr_exhibitions["ExhibitionID"];
-                            m_exhibition.ProjectNumber = dr_exhibitions["ProjectNumber"].ToString();
-                            m_exhibition.ExhibitionTitle = dr_exhibitions["ExhTitle"].ToString();
-                            m_exhibition.Department = dr_exhibitions["Department"].ToString();
-                            m_exhibition.ExhibitionDisplayDate = dr_exhibitions["DisplayDate"].ToString();
-                            m_exhibition.ExhibitionBeginDate = dr_exhibitions["BeginISODate"].ToString();
-                            m_exhibition.ExhibitionEndDate = dr_exhibitions["EndISODate"].ToString();
-                            m_exhibition.ObjectCount = (int)dr_exhibitions["ResultsCount"];
-
-                            m_exhibition_list.Add(m_exhibition);
-
-                        }
-
-                        m_exhibitions_view_model.Exhibitions = m_exhibition_list;
-
-                        m_object.Exhibitions = m_exhibitions_view_model;
-
-
-                        // Terms for objects
-                        DataTable dt_terms = ds.Tables[2];
-
-                        GetTermsViewModel m_terms_view_model = new GetTermsViewModel();
-
-                        m_terms_view_model.ResultsCount = dt_terms.Rows.Count;
-
-                        foreach (DataRow dr_terms in dt_terms.Rows)
-                        {
-                            m_term = new GetTermViewModel();
-
-                            m_term.TermID = (int)dr_terms["TermID"];
-                            m_term.Term = dr_terms["Term"].ToString();
-                            m_term.TermType = dr_terms["TermType"].ToString();
-
-                            m_term_list.Add(m_term);
-
-                        }
-
-                        m_terms_view_model.Terms = m_term_list;
-
-                        m_object.Terms = m_terms_view_model;
-
-                        m_object_list.Add(m_object);
-
-                    }
-
-                    m_objects_view_model.Objects = m_object_list;
-
-                    return m_objects_view_model;
-
-            }
-            else
-            {
-                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.NotFound, String.Format("Token {0} is not valid.", token)));
-            }
-
-
-        }
-
-        /// <summary>
-        /// Returns a random object. 
-        /// </summary>
-        
-        // GET api/objects/random
-        [Route("tms-api/objects/random")]
-        public GetObjectsViewModel GetObjectRandom(string token)
-        {
-
-            Random m_random = new Random();
-            int m_random_object = m_random.Next(100, 10000);
-
-            // First check the auth token
-
-            // Connect to databases
-            string conn_token = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-            string conn_data = ConfigurationManager.ConnectionStrings["TMSConnectionString"].ConnectionString;
-
-            SqlConnection sql_conn_token = new SqlConnection(conn_token);
-            SqlConnection sql_conn_data = new SqlConnection(conn_data);
-
-            sql_conn_token.Open();
-
-            SqlCommand m_cmd_verify_token = new SqlCommand("procValidateToken", sql_conn_token);
-            m_cmd_verify_token.CommandType = CommandType.StoredProcedure;
-            m_cmd_verify_token.Parameters.Clear();
-            m_cmd_verify_token.Parameters.Add(new SqlParameter(@"@p_token", SqlDbType.NVarChar) { Value = token });
-
-            int m_isvalid = Convert.ToInt32(m_cmd_verify_token.ExecuteScalar());
-
-            sql_conn_token.Close();
-
-            // 0 is false, 1 is true.
-            if (m_isvalid == 1)
-            {
-                sql_conn_data.Open();
-
-                SqlCommand m_cmd_getObjectData = new SqlCommand("procTmsApiObjects", sql_conn_data);
-                m_cmd_getObjectData.CommandType = CommandType.StoredProcedure;
-                m_cmd_getObjectData.Parameters.Clear();
-                m_cmd_getObjectData.Parameters.Add(new SqlParameter(@"@p_objectid", SqlDbType.Int) { Value = m_random_object });
-
-                SqlDataAdapter sda = new SqlDataAdapter(m_cmd_getObjectData);
-                DataSet ds = new DataSet();
-                sda.Fill(ds);
-                sda.Dispose();
-                sql_conn_data.Close();
-
-                // Objects data
-                DataTable dt_objects = ds.Tables[0];
 
                 GetObjectsViewModel m_objects_view_model = new GetObjectsViewModel();
 
-                m_objects_view_model.Source = "Your Museum Name Here";
+                m_objects_view_model.Source = "The Museum of Modern Art (MoMA)";
                 m_objects_view_model.Language = "EN";
                 m_objects_view_model.ResultsCount = dt_objects.Rows.Count;
 
@@ -531,6 +365,9 @@ namespace tms_api.Controllers
 
                 GetTermViewModel m_term = new GetTermViewModel();
                 List<GetTermViewModel> m_term_list = new List<GetTermViewModel>();
+
+                GetComponentViewModel m_component = new GetComponentViewModel();
+                List<GetComponentViewModel> m_component_list = new List<GetComponentViewModel>();
 
 
                 foreach (DataRow dr_objects in dt_objects.Rows)
@@ -613,6 +450,283 @@ namespace tms_api.Controllers
                     m_terms_view_model.Terms = m_term_list;
 
                     m_object.Terms = m_terms_view_model;
+
+
+                    // Components for objects
+                    DataTable dt_components = ds.Tables[3];
+
+                    GetComponentsViewModel m_components_view_model = new GetComponentsViewModel();
+
+                    string m_dimensions_json;
+                    string m_attributes_json;
+                    string m_textentries_json;
+
+                    dynamic d_dimensions_json;
+                    dynamic d_attributes_json;
+                    dynamic d_textentries_json;
+
+                    m_components_view_model.ResultsCount = dt_components.Rows.Count;
+
+                    foreach (DataRow dr_components in dt_components.Rows)
+                    {
+                        m_component = new GetComponentViewModel();
+
+                        m_component.ComponentID = (int)dr_components["ComponentID"];
+                        m_component.ComponentNumber = dr_components["ComponentNumber"].ToString();
+                        m_component.ComponentName = dr_components["ComponentName"].ToString();
+                        m_component.PhysDesc = dr_components["PhysDesc"].ToString();
+                        m_component.StorageComments = dr_components["StorageComments"].ToString();
+                        m_component.InstallComments = dr_components["InstallComments"].ToString();
+                        m_component.PrepComments = dr_components["PrepComments"].ToString();
+                        m_component.ComponentType = dr_components["ComponentType"].ToString();
+
+                        // dimensions, attributes, and textentries are retrieved via SQL with a json structure already
+                        m_dimensions_json = dr_components["Dimensions"].ToString();
+                        m_attributes_json = dr_components["Attributes"].ToString();
+                        m_textentries_json = dr_components["TextEntries"].ToString();
+
+                        d_dimensions_json = JsonConvert.DeserializeObject(m_dimensions_json);
+                        d_attributes_json = JsonConvert.DeserializeObject(m_attributes_json);
+                        d_textentries_json = JsonConvert.DeserializeObject(m_textentries_json);
+
+                        m_component.Dimensions = d_dimensions_json;
+                        m_component.Attributes = d_attributes_json;
+                        m_component.TextEntries = d_textentries_json; 
+
+
+                        m_component.CompCount = (int)dr_components["CompCount"];
+
+                        m_component_list.Add(m_component);
+
+
+                    }
+
+                    m_components_view_model.Components = m_component_list;
+
+                    m_object.Components = m_components_view_model;
+
+                    m_object_list.Add(m_object);
+
+                }
+
+                m_objects_view_model.Objects = m_object_list;
+
+                return m_objects_view_model;
+
+            }
+            else
+            {
+                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.NotFound, String.Format("Token {0} is not valid.", token)));
+            }
+
+
+        }
+
+        /// <summary>
+        /// Returns a random object. 
+        /// </summary>
+
+        // GET api/objects/random
+        [Route("api/objects/random")]
+        public GetObjectsViewModel GetObjectRandom(string token)
+        {
+
+            Random m_random = new Random();
+            int m_random_object = m_random.Next(100, 10000);
+
+            // First check the auth token
+
+            // Connect to databases
+            string conn_token = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            string conn_data = ConfigurationManager.ConnectionStrings["TMSConnectionString"].ConnectionString;
+
+            SqlConnection sql_conn_token = new SqlConnection(conn_token);
+            SqlConnection sql_conn_data = new SqlConnection(conn_data);
+
+            sql_conn_token.Open();
+
+            SqlCommand m_cmd_verify_token = new SqlCommand("procValidateToken", sql_conn_token);
+            m_cmd_verify_token.CommandType = CommandType.StoredProcedure;
+            m_cmd_verify_token.Parameters.Clear();
+            m_cmd_verify_token.Parameters.Add(new SqlParameter(@"@p_token", SqlDbType.NVarChar) { Value = token });
+
+            int m_isvalid = Convert.ToInt32(m_cmd_verify_token.ExecuteScalar());
+
+            sql_conn_token.Close();
+
+            // 0 is false, 1 is true.
+            if (m_isvalid == 1)
+            {
+                sql_conn_data.Open();
+
+                SqlCommand m_cmd_getObjectData = new SqlCommand("procMomaApiObjects", sql_conn_data);
+                m_cmd_getObjectData.CommandType = CommandType.StoredProcedure;
+                m_cmd_getObjectData.Parameters.Clear();
+                m_cmd_getObjectData.Parameters.Add(new SqlParameter(@"@p_objectid", SqlDbType.Int) { Value = m_random_object });
+
+                SqlDataAdapter sda = new SqlDataAdapter(m_cmd_getObjectData);
+                DataSet ds = new DataSet();
+                sda.Fill(ds);
+                sda.Dispose();
+                sql_conn_data.Close();
+
+                // Objects data
+                DataTable dt_objects = ds.Tables[0];
+
+                GetObjectsViewModel m_objects_view_model = new GetObjectsViewModel();
+
+                m_objects_view_model.Source = "The Museum of Modern Art (MoMA)";
+                m_objects_view_model.Language = "EN";
+                m_objects_view_model.ResultsCount = dt_objects.Rows.Count;
+
+
+                GetObjectViewModel m_object = new GetObjectViewModel();
+                List<GetObjectViewModel> m_object_list = new List<GetObjectViewModel>();
+
+                GetExhibitionViewModel m_exhibition = new GetExhibitionViewModel();
+                List<GetExhibitionViewModel> m_exhibition_list = new List<GetExhibitionViewModel>();
+
+                GetTermViewModel m_term = new GetTermViewModel();
+                List<GetTermViewModel> m_term_list = new List<GetTermViewModel>();
+
+                GetComponentViewModel m_component = new GetComponentViewModel();
+                List<GetComponentViewModel> m_component_list = new List<GetComponentViewModel>();
+
+
+                foreach (DataRow dr_objects in dt_objects.Rows)
+                {
+
+                    m_object = new GetObjectViewModel();
+
+                    m_object.ObjectNumber = dr_objects["ObjectNumber"].ToString();
+                    m_object.ObjectID = (int)dr_objects["ObjectID"];
+                    m_object.Title = dr_objects["Title"].ToString();
+                    m_object.DisplayName = dr_objects["DisplayName"].ToString();
+                    m_object.AlphaSort = dr_objects["AlphaSort"].ToString();
+                    m_object.ArtistID = (int)dr_objects["ArtistID"];
+                    m_object.DisplayDate = dr_objects["DisplayDate"].ToString();
+                    m_object.Dated = dr_objects["Dated"].ToString();
+                    m_object.DateBegin = (int)dr_objects["DateBegin"];
+                    m_object.DateEnd = (int)dr_objects["DateEnd"];
+                    m_object.Medium = dr_objects["Medium"].ToString();
+                    m_object.Dimensions = dr_objects["Dimensions"].ToString();
+                    m_object.Department = dr_objects["Department"].ToString();
+                    m_object.Classification = dr_objects["Classification"].ToString();
+                    m_object.OnView = (Int16)dr_objects["OnView"];
+                    m_object.Provenance = dr_objects["Provenance"].ToString();
+                    m_object.Description = dr_objects["Description"].ToString();
+                    m_object.ObjectStatusID = (int)dr_objects["ObjectStatusID"];
+                    m_object.CreditLine = dr_objects["CreditLine"].ToString();
+                    m_object.LastModifiedDate = DateTime.Parse(dr_objects["LastModifiedDate"].ToString(), null, DateTimeStyles.AdjustToUniversal);  //Convert.ToDateTime(dr_objects["LastModifiedDate"].ToString(),);
+                    m_object.ImageID = dr_objects["ImageID"].ToString();
+                    m_object.Thumbnail = dr_objects["Thumbnail"].ToString();
+                    m_object.FullImage = dr_objects["FullImage"].ToString();
+
+                    // Exhibitions for objects
+                    DataTable dt_exhibitions = ds.Tables[1];
+
+                    GetExhibitionsViewModel m_exhibitions_view_model = new GetExhibitionsViewModel();
+
+                    m_exhibitions_view_model.ResultsCount = dt_exhibitions.Rows.Count;
+
+                    foreach (DataRow dr_exhibitions in dt_exhibitions.Rows)
+                    {
+                        m_exhibition = new GetExhibitionViewModel();
+
+                        m_exhibition.ExhibitionID = (int)dr_exhibitions["ExhibitionID"];
+                        m_exhibition.ProjectNumber = dr_exhibitions["ProjectNumber"].ToString();
+                        m_exhibition.ExhibitionTitle = dr_exhibitions["ExhTitle"].ToString();
+                        m_exhibition.Department = dr_exhibitions["Department"].ToString();
+                        m_exhibition.ExhibitionDisplayDate = dr_exhibitions["DisplayDate"].ToString();
+                        m_exhibition.ExhibitionBeginDate = dr_exhibitions["BeginISODate"].ToString();
+                        m_exhibition.ExhibitionEndDate = dr_exhibitions["EndISODate"].ToString();
+                        m_exhibition.ObjectCount = (int)dr_exhibitions["ResultsCount"];
+
+                        m_exhibition_list.Add(m_exhibition);
+
+                    }
+
+                    m_exhibitions_view_model.Exhibitions = m_exhibition_list;
+
+                    m_object.Exhibitions = m_exhibitions_view_model;
+
+
+                    // Terms for objects
+                    DataTable dt_terms = ds.Tables[2];
+
+                    GetTermsViewModel m_terms_view_model = new GetTermsViewModel();
+
+                    m_terms_view_model.ResultsCount = dt_terms.Rows.Count;
+
+                    foreach (DataRow dr_terms in dt_terms.Rows)
+                    {
+                        m_term = new GetTermViewModel();
+
+                        m_term.TermID = (int)dr_terms["TermID"];
+                        m_term.Term = dr_terms["Term"].ToString();
+                        m_term.TermType = dr_terms["TermType"].ToString();
+
+                        m_term_list.Add(m_term);
+
+                    }
+
+                    m_terms_view_model.Terms = m_term_list;
+
+                    m_object.Terms = m_terms_view_model;
+
+                    // Components for objects
+                    DataTable dt_components = ds.Tables[3];
+
+                    GetComponentsViewModel m_components_view_model = new GetComponentsViewModel();
+
+                    string m_dimensions_json;
+                    string m_attributes_json;
+                    string m_textentries_json;
+
+                    dynamic d_dimensions_json;
+                    dynamic d_attributes_json;
+                    dynamic d_textentries_json;
+
+                    m_components_view_model.ResultsCount = dt_components.Rows.Count;
+
+                    foreach (DataRow dr_components in dt_components.Rows)
+                    {
+                        m_component = new GetComponentViewModel();
+
+                        m_component.ComponentID = (int)dr_components["ComponentID"];
+                        m_component.ComponentNumber = dr_components["ComponentNumber"].ToString();
+                        m_component.ComponentName = dr_components["ComponentName"].ToString();
+                        m_component.PhysDesc = dr_components["PhysDesc"].ToString();
+                        m_component.StorageComments = dr_components["StorageComments"].ToString();
+                        m_component.InstallComments = dr_components["InstallComments"].ToString();
+                        m_component.PrepComments = dr_components["PrepComments"].ToString();
+                        m_component.ComponentType = dr_components["ComponentType"].ToString();
+                        m_component.Dimensions = dr_components["Dimensions"].ToString();
+                        m_component.Attributes = dr_components["Attributes"].ToString();
+
+                        // dimensions, attributes, and textentries are retrieved via SQL with a json structure already
+                        m_dimensions_json = dr_components["Dimensions"].ToString();
+                        m_attributes_json = dr_components["Attributes"].ToString();
+                        m_textentries_json = dr_components["TextEntries"].ToString();
+
+                        d_dimensions_json = JsonConvert.DeserializeObject(m_dimensions_json);
+                        d_attributes_json = JsonConvert.DeserializeObject(m_attributes_json);
+                        d_textentries_json = JsonConvert.DeserializeObject(m_textentries_json);
+
+                        m_component.Dimensions = d_dimensions_json;
+                        m_component.Attributes = d_attributes_json;
+                        m_component.TextEntries = d_textentries_json;
+
+                        m_component.CompCount = (int)dr_components["CompCount"];
+
+                        m_component_list.Add(m_component);
+
+
+                    }
+
+                    m_components_view_model.Components = m_component_list;
+
+                    m_object.Components = m_components_view_model;
 
                     m_object_list.Add(m_object);
 
