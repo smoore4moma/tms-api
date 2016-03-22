@@ -295,9 +295,86 @@ WHERE TX.TableID = 108
 AND TX.ThesXrefTypeID IN (19,110,112,158)
 AND TX.ID = @p_objectid;
 
+SELECT [ComponentID]
+      ,[ComponentNumber]
+      ,[ComponentName]
+      ,[ObjectID]
+      ,[PhysDesc]
+      ,[StorageComments]
+      ,[InstallComments]
+      ,[PrepComments]
+      ,[ComponentType]
+      ,[CompCount]
+      ,[Dimensions]
+      ,[Attributes]
+      ,[TextEntries]
+FROM [vwMomaWebSvcComponents] C
+WHERE C.ObjectID = @p_objectid
 
 END
 GO
+
+CREATE VIEW [dbo].[vwMomaWebSvcComponents] AS
+SELECT [ComponentID]
+      ,[ComponentNumber]
+      ,[ComponentName]
+      ,[ObjectID]
+      ,[PhysDesc]
+      ,[StorageComments]
+      ,[InstallComments]
+      ,[PrepComments]
+      ,OCT.ObjCompType AS ComponentType
+      ,[CompCount]
+      ,'[' + CDA.Dimensions + ']' AS Dimensions
+      ,'[' + CA.Terms + ']' AS Attributes
+      ,'[' + TE.TextEntry + ']' AS TextEntries
+  FROM [dbo].[ObjComponents] OC
+   INNER JOIN [dbo].[ObjCompTypes] OCT ON OCT.ObjCompTypeID = OC.ComponentType
+   LEFT JOIN [vwMomaComponentDimensions] CDA ON OC.ComponentID = CDA.ID
+   LEFT JOIN [vwMomaComponentAttributes] CA ON OC.ComponentID = CA.ID  
+   LEFT JOIN [vwMomaComponentTextEntry] TE ON OC.ComponentID = TE.ID
+   
+
+CREATE VIEW [dbo].[vwMomaComponentTextEntry] AS
+SELECT TE.ID, TextEntry = STUFF((SELECT ',' + ('{"' + TT.TextType + '": "' + ISNULL(TE1.TextEntry,'') + '","TextDate": "' + ISNULL(TE1.TextDate,'') 
+   + '","TextAuthor": "' + ISNULL(C1.AlphaSort,'') + '"}') 
+  FROM dbo.TextEntries TE1
+  INNER JOIN TextTypes TT ON TE1.TextTypeID = TT.TextTypeID
+  LEFT JOIN Constituents C1 ON C1.ConstituentID = TE1.AuthorConID
+  WHERE TE1.TableID = 94
+  AND TE1.ID = TE.ID
+  FOR XML PATH('')), 1, 1, '')
+FROM dbo.TextEntries TE
+LEFT JOIN Constituents C ON C.ConstituentID = TE.AuthorConID
+WHERE TE.TableID = 94
+GROUP BY TE.ID
+
+CREATE VIEW [dbo].[vwMomaComponentDimensions] AS
+SELECT DF.ID, Dimensions = STUFF( (SELECT ',' + ('{"' + DE.Element + '":"' + REPLACE(DF1.DisplayDimensions,'"','') + '"}') 
+  FROM dbo.DimensionsFlat DF1
+  INNER JOIN DimensionElements DE ON DF1.ElementID = DE.ElementID
+  WHERE DF1.TableID = 94
+  AND DF1.ID = DF.ID
+  FOR XML PATH('')), 1, 1, '')
+FROM dbo.DimensionsFlat DF
+WHERE DF.TableID = 94
+GROUP BY DF.ID
+
+CREATE VIEW [dbo].[vwMomaComponentAttributes] AS
+-- SELECT TV.ID, Terms = STUFF((SELECT ',' + ('"' + TV1.ThesXrefType + '":"' + TV1.Term + ' (Remarks: ' + TV1.Remarks + ')"') 
+SELECT TV.ID, Terms = STUFF((SELECT ',' + ('{"' + TV1.ThesXrefType + '": "' + ISNULL(TV1.Term,'') + '","Remarks": "' + ISNULL(TV1.Remarks,'') + '"}') 
+  FROM dbo.TermView TV1
+  WHERE TV1.TableID = 94
+  AND TV1.Active = 1
+  AND TV1.ID = TV.ID
+  FOR XML PATH('')), 1, 1, '')
+FROM dbo.TermView TV
+WHERE TV.TableID = 94
+AND TV.Active = 1
+--AND TV.ID = 9212
+GROUP BY TV.ID   
+   
+ 
 /****** Object:  StoredProcedure [dbo].[procTmsApiArtistSearch]    Script Date: 12/23/2014 09:22:07 ******/
 SET ANSI_NULLS ON
 GO
