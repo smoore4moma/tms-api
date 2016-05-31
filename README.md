@@ -16,7 +16,7 @@ There is an important distinction about the TMS API - the data are platform and 
 
  >The tms-web project is a HTML5 web front-end to tms-api:  https://github.com/smoore4moma/tms-web
 
-##Screenshots...
+##screenshots
 
 <strong>UI</strong>
 
