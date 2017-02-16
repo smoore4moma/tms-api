@@ -33,6 +33,6 @@ There is an important distinction about the TMS API - the data are platform and 
 
 <strong>Installation</strong>
 
-Much of this project comes straight out of Visual Studio 2013 Single Page Application template.  In fact, this is really where you should start.  The parts that are museum-specific are Models, Views and Controllers with the words Object/Artist/Exhibition/Term.  You can add these to an existing project after forking the Git repository.
+Much of this project comes straight out of Visual Studio 2015 Single Page Application template.  In fact, this is really where you should start.  The parts that are museum-specific are Models, Views and Controllers with the words Object/Artist/Exhibition/Term.  You can add these to an existing project after forking the Git repository.
 
-This project requires you to know SQL Server, and TMS for that matter, fairly well.  Please see the database directory and the README.md file there for database setup and configuration.  The project is validated againt TMS 2012 SP1 and SP2 running on SQL Server 2008. 
+This project requires you to know SQL Server, and TMS for that matter, fairly well.  Please see the database directory and the README.md file there for database setup and configuration.  The project is validated againt TMS 2016 R2 running on SQL Server 2014. 
