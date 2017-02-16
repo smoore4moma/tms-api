@@ -43,9 +43,18 @@ namespace tms_api
             // Rename your routeTemplate
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "tms-api/{controller}/{id}",
+                routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+			
+			// Alexa route with validation handler
+			config.Routes.MapHttpRoute(
+            name: "AlexaApi",
+            routeTemplate: "api/alexa/{id}",
+            defaults: null,
+            constraints: null,
+            handler: new Handlers.AlexaRequestValidationHandler()
+			
 
         }
     }

@@ -1,0 +1,88 @@
+{
+  "intents": [
+    {
+      "intent": "ArtistsIntent",
+      "slots": [
+        {
+          "name": "StartName",
+          "type": "NAME"
+        },
+        {
+          "name": "EndName",
+          "type": "NAME"
+        }
+      ]
+    },
+    {
+      "intent": "ArtIntent",
+      "slots": [
+        {
+          "name": "StartTitle",
+          "type": "TITLE"
+        },
+        {
+          "name": "EndTitle",
+          "type": "TITLE"
+        }
+      ]
+    },
+    {
+      "intent": "ExhibitionsIntent",
+      "slots": [
+        {
+          "name": "Date",
+          "type": "AMAZON.DATE"
+        }
+      ]
+    },
+    {
+      "intent": "EventsIntent",
+      "slots": [ ]
+    },
+    {
+      "intent": "FilmsIntent",
+      "slots": [ ]
+    },
+    {
+      "intent": "BathroomsIntent",
+      "slots": [ ]
+    },
+    {
+      "intent": "HoursIntent",
+      "slots": [ ]
+    },
+    {
+      "intent": "DirectionsIntent",
+      "slots": [ ]
+    },
+    {
+      "intent": "FoodIntent",
+      "slots": [ ]
+    },
+    {
+      "intent": "StoresIntent",
+      "slots": [ ]
+    },
+    {
+      "intent": "AMAZON.YesIntent",
+      "slots": [ ]
+    },
+    {
+      "intent": "AMAZON.NoIntent",
+      "slots": [ ]
+    },
+    {
+      "intent": "AMAZON.CancelIntent",
+      "slots": [ ]
+    },
+    {
+      "intent": "AMAZON.StopIntent",
+      "slots": [ ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent",
+      "slots": [ ]
+    }
+
+  ]
+}

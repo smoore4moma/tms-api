@@ -1,0 +1,47 @@
+ExhibitionsIntent exhibitions
+ExhibitionsIntent exhibitions {Date}
+ExhibitionsIntent about exhibitions
+ExhibitionsIntent about exhibitions {Date}
+ExhibitionsIntent i want to know about exhibitions {Date}
+ExhibitionsIntent what is showing for exhibitions {Date}
+ExhibitionsIntent what exhibitions are at mohmah {Date}
+
+EventsIntent events
+EventsIntent i would like to know about events
+EventsIntent i want like to know about events
+
+FilmsIntent films
+FilmsIntent what is showing for films
+FilmsIntent where is the cinema
+
+ArtistsIntent how many works do you have by {StartName} {EndName}
+ArtistsIntent about the artist {StartName} {EndName}
+ArtistsIntent who is {StartName} {EndName}
+
+ArtIntent where is the art work {StartTitle} {EndTitle}
+ArtIntent i'm looking for the art work {StartTitle} {EndTitle}
+ArtIntent about the art work {StartTitle} {EndTitle}
+
+BathroomsIntent where are the bathrooms
+BathroomsIntent where are the restrooms
+BathroomsIntent where are the toilets
+
+HoursIntent when are you open
+HoursIntent what are your hours
+HoursIntent when can I go for free
+
+DirectionsIntent where is mowmah
+DirectionsIntent how do i get to mowmah
+DirectionsIntent which subway do i take to get to mowmah
+
+FoodIntent where can i eat
+FoodIntent i'm hungry
+FoodIntent where is the restaurant
+
+StoresIntent where are your stores
+StoresIntent i want to buy a souvenir
+StoresIntent i want to buy a gift
+
+AMAZON.HelpIntent help
+AMAZON.HelpIntent i need assistance
+AMAZON.HelpIntent i need help
