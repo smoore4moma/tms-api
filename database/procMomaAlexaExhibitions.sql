@@ -1,14 +1,3 @@
-USE [TMS]
-GO
-
-/****** Object:  StoredProcedure [dbo].[procMomaAlexaExhibitions]    Script Date: 2/16/2017 3:54:43 PM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
-
 -- =============================================
 -- Author:		MOORE, Steven, MoMA DBA
 -- Create date: 8 September 2016
@@ -102,7 +91,6 @@ WHERE  (ExhVenuesXrefs.ConstituentID = 8901)
 AND (ExhVenuesXrefs.BeginISODate <= @p_start_date) 
 AND (ExhVenuesXrefs.EndISODate >= @p_end_date) 
 AND Exhibitions.ExhDepartment not in (54, 69, 76, 83)
---AND ExhTitle LIKE '%2016%'
 
 
 END
