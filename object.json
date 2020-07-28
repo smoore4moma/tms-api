@@ -1,1 +1,248 @@
-{"source":"The Museum of Modern Art (MoMA)","language":"EN","resultsCount":1,"objects":[{"objectNumber":"611.1959","objectID":81670,"title":"She-Goat","role":"Artist","prefix":"","displayName":"Pablo Picasso","suffix":"","alphaSort":"Picasso Pablo","artistID":4609,"displayDate":"Spanish, 1881–1973","dated":"Vallauris, 1950 (cast 1952)","dateBegin":1950,"dateEnd":1950,"accessionDate":"1959-04-22","medium":"Bronze","dimensions":"46 3/8 x 56 3/8 x 28 1/8\" (117.7 x 143.1 x 71.4 cm)\r\n","department":"Painting & Sculpture","departmentID":5,"classification":"Sculpture","onView":1,"provenance":"","description":"Bronze, after an assemblage of palm leaf, ceramic flowerpots, wicker basket, metal elements, and plaster","objectStatusID":1,"creditLine":"Mrs. Simon Guggenheim Fund","portfolio":"","edition":"Spies 2000, cat. 409: one of two proofs cast at Valsuani in 1952","imageID":"452841","thumbnail":"https://api.moma.org/Images/Size1/Images/611_1959_CCCR.jpg","fullImage":"http://moma-images.museum.moma.org/TMSImages/Size3/Images/611_1959_CCCR.jpg","currentLocation":"11w53, On View, Sculpture Garden (611.1959)","lastModifiedDate":"2019-05-23T11:17:32","exhibitions":{"source":null,"language":null,"resultsCount":10,"exhibitions":[{"exhibitionID":2755,"projectNumber":"","exhibitionTitle":"Masterworks Houston/Berlin","momaDepartment":false,"department":"Painting & Sculpture","exhibitionDisplayDate":"September 21, 2003 - September 19, 2004","exhibitionBeginDate":"2003-09-21","exhibitionEndDate":"2004-09-19","objectCount":206},{"exhibitionID":2780,"projectNumber":"","exhibitionTitle":"Sculpture from The Museum of Modern Art","momaDepartment":false,"department":"Painting & Sculpture","exhibitionDisplayDate":"April 26, 2002 - August 31, 2003","exhibitionBeginDate":"2002-04-26","exhibitionEndDate":"2003-08-31","objectCount":15},{"exhibitionID":3208,"projectNumber":"","exhibitionTitle":"Masterworks from The Museum of Modern Art, New York, 1900-1955","momaDepartment":false,"department":"Painting & Sculpture","exhibitionDisplayDate":"October 6, 2001 - February 3, 2002","exhibitionBeginDate":"2001-10-06","exhibitionEndDate":"2002-02-03","objectCount":75},{"exhibitionID":3544,"projectNumber":"1934","exhibitionTitle":"The Abby Aldrich Rockefeller Sculpture Garden: Inaugural Installation","momaDepartment":false,"department":"Painting & Sculpture","exhibitionDisplayDate":"Saturday, November 20, 2004 - Saturday, December 31, 2005","exhibitionBeginDate":"2004-11-20","exhibitionEndDate":"2005-12-31","objectCount":41},{"exhibitionID":4620,"projectNumber":"2040","exhibitionTitle":"Focus: Picasso Sculpture","momaDepartment":false,"department":"Painting & Sculpture","exhibitionDisplayDate":"Sunday, July 13, 2008 - Monday, November 03, 2008","exhibitionBeginDate":"2008-07-13","exhibitionEndDate":"2008-11-03","objectCount":12},{"exhibitionID":8741,"projectNumber":"2336","exhibitionTitle":"Picasso Sculpture","momaDepartment":false,"department":"Painting & Sculpture","exhibitionDisplayDate":"September 14, 2015 - February 07, 2016","exhibitionBeginDate":"2015-09-14","exhibitionEndDate":"2016-02-07","objectCount":179},{"exhibitionID":11501,"projectNumber":"2359","exhibitionTitle":"Sculpture from the Collection 1960–1969 ","momaDepartment":false,"department":"Painting & Sculpture","exhibitionDisplayDate":"June 26, 2016 - June 26, 2017","exhibitionBeginDate":"2016-06-26","exhibitionEndDate":"2017-07-09","objectCount":16},{"exhibitionID":11811,"projectNumber":"2382A","exhibitionTitle":"Dan Graham: Child's Play","momaDepartment":false,"department":"Painting & Sculpture","exhibitionDisplayDate":"July 17, 2017 - May 13, 2018","exhibitionBeginDate":"2017-07-17","exhibitionEndDate":"2018-05-13","objectCount":16},{"exhibitionID":13108,"projectNumber":"2400","exhibitionTitle":"If Everything Is Sculpture Why Make Sculpture? Artist's Choice: Peter Fischli","momaDepartment":false,"department":"Painting & Sculpture","exhibitionDisplayDate":"June 11, 2018 - May 01, 2019","exhibitionBeginDate":"2018-06-11","exhibitionEndDate":"2019-05-01","objectCount":23},{"exhibitionID":13412,"projectNumber":"2431","exhibitionTitle":"Garden 2019","momaDepartment":false,"department":"Painting & Sculpture - Confidential","exhibitionDisplayDate":"Monday, October 21, 2019 - Sunday, June 07, 2020","exhibitionBeginDate":"2019-10-21","exhibitionEndDate":"2020-06-07","objectCount":21}]},"persons":{"source":null,"language":null,"resultsCount":3,"persons":[{"artistID":4609,"alphaSort":"Picasso Pablo","role":"Artist","displayName":"Pablo Picasso","displayDate":"Spanish, 1881–1973","displayOrder":1},{"artistID":16037,"alphaSort":"Guggenheim Olga Hirsch Mrs.","role":"Donor","displayName":"Mrs. Simon Guggenheim","displayDate":"","displayOrder":1},{"artistID":13518,"alphaSort":"Galerie de France","role":"Source","displayName":"Galerie de France, Paris","displayDate":"","displayOrder":2}]},"components":{"source":null,"language":null,"resultsCount":3,"components":[{"componentID":81670,"componentNumber":"611.1959","componentName":"","physDesc":"","storageComments":"","installComments":"","prepComments":"","componentType":"Part of artwork","compCount":1,"dimensions":null,"attributes":null,"textEntries":null},{"componentID":142435,"componentNumber":"611.1959.BS","componentName":"Sandstone","physDesc":"Sandstone Vermont Stone dimensions and weight","storageComments":"","installComments":"","prepComments":"","componentType":"Accessory","compCount":1,"dimensions":[{"Overall":"6 × 49 × 36, 980 lb. (15.2 × 124.5 × 91.4 cm, 444.5 kg)"}],"attributes":null,"textEntries":null},{"componentID":262013,"componentNumber":"611.1959.PLT","componentName":"pallet","physDesc":"very bad shape.   Should be replaced.","storageComments":"","installComments":"","prepComments":"","componentType":"Accessory","compCount":1,"dimensions":[{"Overall":"8 × 45 × 45 (20.3 × 114.3 × 114.3 cm)"}],"attributes":null,"textEntries":null}]},"titles":{"source":null,"language":null,"resultsCount":2,"titles":[{"titleTypeID":1,"titleType":"Display Title","title":"She-Goat","active":1,"displayOrder":1,"displayed":1,"isExhTitle":false},{"titleTypeID":5,"titleType":"Foreign Language Title","title":"[La Chèvre]","active":1,"displayOrder":2,"displayed":1,"isExhTitle":false}]},"dates":{"source":null,"language":null,"resultsCount":0,"dates":[]}}]}
+{
+	"source": "The Museum of Modern Art (MoMA)",
+	"language": "EN",
+	"resultsCount": 1,
+	"objects": [{
+		"objectNumber": "611.1959",
+		"objectID": 81670,
+		"title": "She-Goat",
+		"role": "Artist",
+		"prefix": "",
+		"displayName": "Pablo Picasso",
+		"suffix": "",
+		"alphaSort": "Picasso Pablo",
+		"artistID": 4609,
+		"displayDate": "Spanish, 1881–1973",
+		"dated": "Vallauris, 1950 (cast 1952)",
+		"dateBegin": 1950,
+		"dateEnd": 1950,
+		"accessionDate": "1959-04-22",
+		"medium": "Bronze",
+		"dimensions": "46 3/8 x 56 3/8 x 28 1/8\" (117.7 x 143.1 x 71.4 cm)\r\n",
+		"department": "Painting & Sculpture",
+		"departmentID": 5,
+		"classification": "Sculpture",
+		"onView": 1,
+		"provenance": "",
+		"description": "Bronze, after an assemblage of palm leaf, ceramic flowerpots, wicker basket, metal elements, and plaster",
+		"objectStatusID": 1,
+		"creditLine": "Mrs. Simon Guggenheim Fund",
+		"portfolio": "",
+		"edition": "Spies 2000, cat. 409: one of two proofs cast at Valsuani in 1952",
+		"imageID": "452841",
+		"thumbnail": "https://api.moma.org/Images/Size1/Images/611_1959_CCCR.jpg",
+		"fullImage": "http://moma-images.museum.moma.org/TMSImages/Size3/Images/611_1959_CCCR.jpg",
+		"currentLocation": "11w53, On View, Sculpture Garden (611.1959)",
+		"lastModifiedDate": "2019-05-23T11:17:32",
+		"exhibitions": {
+			"source": null,
+			"language": null,
+			"resultsCount": 10,
+			"exhibitions": [{
+				"exhibitionID": 2755,
+				"projectNumber": "",
+				"exhibitionTitle": "Masterworks Houston/Berlin",
+				"momaDepartment": false,
+				"department": "Painting & Sculpture",
+				"exhibitionDisplayDate": "September 21, 2003 - September 19, 2004",
+				"exhibitionBeginDate": "2003-09-21",
+				"exhibitionEndDate": "2004-09-19",
+				"objectCount": 206
+			}, {
+				"exhibitionID": 2780,
+				"projectNumber": "",
+				"exhibitionTitle": "Sculpture from The Museum of Modern Art",
+				"momaDepartment": false,
+				"department": "Painting & Sculpture",
+				"exhibitionDisplayDate": "April 26, 2002 - August 31, 2003",
+				"exhibitionBeginDate": "2002-04-26",
+				"exhibitionEndDate": "2003-08-31",
+				"objectCount": 15
+			}, {
+				"exhibitionID": 3208,
+				"projectNumber": "",
+				"exhibitionTitle": "Masterworks from The Museum of Modern Art, New York, 1900-1955",
+				"momaDepartment": false,
+				"department": "Painting & Sculpture",
+				"exhibitionDisplayDate": "October 6, 2001 - February 3, 2002",
+				"exhibitionBeginDate": "2001-10-06",
+				"exhibitionEndDate": "2002-02-03",
+				"objectCount": 75
+			}, {
+				"exhibitionID": 3544,
+				"projectNumber": "1934",
+				"exhibitionTitle": "The Abby Aldrich Rockefeller Sculpture Garden: Inaugural Installation",
+				"momaDepartment": false,
+				"department": "Painting & Sculpture",
+				"exhibitionDisplayDate": "Saturday, November 20, 2004 - Saturday, December 31, 2005",
+				"exhibitionBeginDate": "2004-11-20",
+				"exhibitionEndDate": "2005-12-31",
+				"objectCount": 41
+			}, {
+				"exhibitionID": 4620,
+				"projectNumber": "2040",
+				"exhibitionTitle": "Focus: Picasso Sculpture",
+				"momaDepartment": false,
+				"department": "Painting & Sculpture",
+				"exhibitionDisplayDate": "Sunday, July 13, 2008 - Monday, November 03, 2008",
+				"exhibitionBeginDate": "2008-07-13",
+				"exhibitionEndDate": "2008-11-03",
+				"objectCount": 12
+			}, {
+				"exhibitionID": 8741,
+				"projectNumber": "2336",
+				"exhibitionTitle": "Picasso Sculpture",
+				"momaDepartment": false,
+				"department": "Painting & Sculpture",
+				"exhibitionDisplayDate": "September 14, 2015 - February 07, 2016",
+				"exhibitionBeginDate": "2015-09-14",
+				"exhibitionEndDate": "2016-02-07",
+				"objectCount": 179
+			}, {
+				"exhibitionID": 11501,
+				"projectNumber": "2359",
+				"exhibitionTitle": "Sculpture from the Collection 1960–1969 ",
+				"momaDepartment": false,
+				"department": "Painting & Sculpture",
+				"exhibitionDisplayDate": "June 26, 2016 - June 26, 2017",
+				"exhibitionBeginDate": "2016-06-26",
+				"exhibitionEndDate": "2017-07-09",
+				"objectCount": 16
+			}, {
+				"exhibitionID": 11811,
+				"projectNumber": "2382A",
+				"exhibitionTitle": "Dan Graham: Child's Play",
+				"momaDepartment": false,
+				"department": "Painting & Sculpture",
+				"exhibitionDisplayDate": "July 17, 2017 - May 13, 2018",
+				"exhibitionBeginDate": "2017-07-17",
+				"exhibitionEndDate": "2018-05-13",
+				"objectCount": 16
+			}, {
+				"exhibitionID": 13108,
+				"projectNumber": "2400",
+				"exhibitionTitle": "If Everything Is Sculpture Why Make Sculpture? Artist's Choice: Peter Fischli",
+				"momaDepartment": false,
+				"department": "Painting & Sculpture",
+				"exhibitionDisplayDate": "June 11, 2018 - May 01, 2019",
+				"exhibitionBeginDate": "2018-06-11",
+				"exhibitionEndDate": "2019-05-01",
+				"objectCount": 23
+			}, {
+				"exhibitionID": 13412,
+				"projectNumber": "2431",
+				"exhibitionTitle": "Garden 2019",
+				"momaDepartment": false,
+				"department": "Painting & Sculpture - Confidential",
+				"exhibitionDisplayDate": "Monday, October 21, 2019 - Sunday, June 07, 2020",
+				"exhibitionBeginDate": "2019-10-21",
+				"exhibitionEndDate": "2020-06-07",
+				"objectCount": 21
+			}]
+		},
+		"persons": {
+			"source": null,
+			"language": null,
+			"resultsCount": 3,
+			"persons": [{
+				"artistID": 4609,
+				"alphaSort": "Picasso Pablo",
+				"role": "Artist",
+				"displayName": "Pablo Picasso",
+				"displayDate": "Spanish, 1881–1973",
+				"displayOrder": 1
+			}, {
+				"artistID": 16037,
+				"alphaSort": "Guggenheim Olga Hirsch Mrs.",
+				"role": "Donor",
+				"displayName": "Mrs. Simon Guggenheim",
+				"displayDate": "",
+				"displayOrder": 1
+			}, {
+				"artistID": 13518,
+				"alphaSort": "Galerie de France",
+				"role": "Source",
+				"displayName": "Galerie de France, Paris",
+				"displayDate": "",
+				"displayOrder": 2
+			}]
+		},
+		"components": {
+			"source": null,
+			"language": null,
+			"resultsCount": 3,
+			"components": [{
+				"componentID": 81670,
+				"componentNumber": "611.1959",
+				"componentName": "",
+				"physDesc": "",
+				"storageComments": "",
+				"installComments": "",
+				"prepComments": "",
+				"componentType": "Part of artwork",
+				"compCount": 1,
+				"dimensions": null,
+				"attributes": null,
+				"textEntries": null
+			}, {
+				"componentID": 142435,
+				"componentNumber": "611.1959.BS",
+				"componentName": "Sandstone",
+				"physDesc": "Sandstone Vermont Stone dimensions and weight",
+				"storageComments": "",
+				"installComments": "",
+				"prepComments": "",
+				"componentType": "Accessory",
+				"compCount": 1,
+				"dimensions": [{
+					"Overall": "6 × 49 × 36, 980 lb. (15.2 × 124.5 × 91.4 cm, 444.5 kg)"
+				}],
+				"attributes": null,
+				"textEntries": null
+			}, {
+				"componentID": 262013,
+				"componentNumber": "611.1959.PLT",
+				"componentName": "pallet",
+				"physDesc": "very bad shape.   Should be replaced.",
+				"storageComments": "",
+				"installComments": "",
+				"prepComments": "",
+				"componentType": "Accessory",
+				"compCount": 1,
+				"dimensions": [{
+					"Overall": "8 × 45 × 45 (20.3 × 114.3 × 114.3 cm)"
+				}],
+				"attributes": null,
+				"textEntries": null
+			}]
+		},
+		"titles": {
+			"source": null,
+			"language": null,
+			"resultsCount": 2,
+			"titles": [{
+				"titleTypeID": 1,
+				"titleType": "Display Title",
+				"title": "She-Goat",
+				"active": 1,
+				"displayOrder": 1,
+				"displayed": 1,
+				"isExhTitle": false
+			}, {
+				"titleTypeID": 5,
+				"titleType": "Foreign Language Title",
+				"title": "[La Chèvre]",
+				"active": 1,
+				"displayOrder": 2,
+				"displayed": 1,
+				"isExhTitle": false
+			}]
+		},
+		"dates": {
+			"source": null,
+			"language": null,
+			"resultsCount": 0,
+			"dates": []
+		}
+	}]
+}
